@@ -1,0 +1,113 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for old-school look */
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the entire page */
+.page-container {
+    text-align: center;
+}
+
+/* Page title styling */
+.page-title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* Container for login and sign-up forms */
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between login and sign-up */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Login and Sign-Up container styling */
+.login-container,
+.signup-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+    /* Headings for form titles */
+    .login-container h2,
+    .signup-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+/* Input styling for login and sign-up forms */
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* Button styling for forms */
+button {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    /* Hover effect for buttons */
+    button:hover {
+        background-color: #444444;
+    }
+
+/* Sign-Up button styling for toggling the form */
+.toggle-button {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+/* Pop-up styling */
+.signup-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container {
+    width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+button:focus {
+    outline: none;
+}
