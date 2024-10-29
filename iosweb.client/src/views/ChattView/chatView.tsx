@@ -1,6 +1,5 @@
-// Chat.tsx
 import React, { useState } from "react";
-import "./chatViewStyle.css"; // Importera retro-stilen
+import "./chatViewStyle.css"; 
 
 interface Message {
     user: string;
@@ -18,7 +17,7 @@ const Chat: React.FC = () => {
         if (newMessage.trim() !== "") {
             const newMsg: Message = { user: "You", content: newMessage };
             setMessages([...messages, newMsg]);
-            setNewMessage(""); // Töm inputfältet
+            setNewMessage("");
         }
     };
 

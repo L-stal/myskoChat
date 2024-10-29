@@ -45,10 +45,10 @@ public class UserController : ControllerBase
     private async Task<string> GetAdminTokenAsync()
     {
         var client = _httpClientFactory.CreateClient();
-        var tokenUrl = "http://localhost:8080/realms/myskoChat/protocol/openid-connect/token";
+        var tokenUrl = "http://localhost:8080/realms/chatRealm/protocol/openid-connect/token";
 
         var requestContent = new StringContent(
-            $"client_id=myskoChat&client_secret=W2hhE7wq5wIWCfzkxHc4bMW3LYA8Wq17&grant_type=client_credentials",
+            $"client_id=myskoChat&client_secret=jHcQRVak2F25CNOFRlL6AMXANL4UvtWQ&grant_type=client_credentials",
             Encoding.UTF8, "application/x-www-form-urlencoded");
 
         var response = await client.PostAsync(tokenUrl, requestContent);
@@ -57,6 +57,8 @@ public class UserController : ControllerBase
         {
             var tokenResponse = await response.Content.ReadAsStringAsync();
             dynamic tokenData = JsonConvert.DeserializeObject(tokenResponse);
+            Console.WriteLine("Token: " + tokenData.access_token);
+            Console.WriteLine("Token response: " + tokenResponse);
             return tokenData.access_token;
         }
 
@@ -67,7 +69,7 @@ public class UserController : ControllerBase
     private async Task<bool> CreateUserInKeycloakAsync(string token, UserSignupDto userSignupDto)
     {
         var client = _httpClientFactory.CreateClient();
-        var userUrl = "http://localhost:8080/admin/realms/myskoChat/users";
+        var userUrl = "http://localhost:8080/admin/realms/chatRealm/users";
 
         var userData = new
         {
