@@ -3,13 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SecureController : ControllerBase
+public class ProtectedController : ControllerBase
 {
-    //Test to see if only authed-users gets the data
     [HttpGet]
     [Authorize]  
-    public IActionResult GetSecureData()
+    public IActionResult GetProtectedData()
     {
-        return Ok(new { message = "This is secure data!" });
+        return Ok("This is secure data");
     }
 }
