@@ -1,0 +1,18 @@
+
+
+
+
+-Add refresh/jwt token
+
+-Restructure program.cs
+
+-Secure login
+
+-Password hash
+
+----LATER-----
+
+-Encrypt message
+
+-SignalR(?) Look for something else 
+
