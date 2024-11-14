@@ -11,13 +11,17 @@ const Login: React.FC = () => {
     const [showSignup, setShowSignup] = useState<boolean>(false);
     const [email, setEmail] = useState<string>("");
 
-    const handleLogin = () => {
-        window.location.href = "https://localhost:7219/api/auth/login";
+    const handleLogin = async () => {
+        try {
+            await axios.get("http://localhost:5055/api/Auth/login");
+        } catch (error) {
+            console.error("Login failed:", error);
+        }
     };
 
     const handleSignup = async () => {
         try {
-            const response = await axios.post("https://localhost:7219/api/User/signup", {
+            const response = await axios.post("http://localhost:5055/api/User/signup", {
                 username,
                 email,
                 password,

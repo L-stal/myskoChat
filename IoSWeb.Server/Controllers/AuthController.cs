@@ -9,11 +9,21 @@ namespace IoSWeb.Server.Controllers
     [ApiController]
     public class AuthController : Controller
     {
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public AuthController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
+
         [HttpGet("login")]
         public IActionResult Login()
         {
-            return Challenge(new AuthenticationProperties { RedirectUri = "https://localhost:5173/chat" }, "Keycloak");
+            return Challenge(new AuthenticationProperties { RedirectUri = "http://localhost:5173/chat" }, "Keycloak");
         }
+
+
         [HttpGet("logout")]
         public IActionResult Logout()
         {
